@@ -39,19 +39,19 @@ def configure_proxy(proxy_address=''):
 	os.environ['HTTP_PROXY'] = proxy_address
 
 def split(seq, procs):
-		'''
-		split sequence into #procs
-		seq must be a list
+	'''
+	split sequence into #procs
+	seq must be a list
 
-		for use if using >1 processor
-		'''
-		avg = len(seq) / float(procs)
-		out = []
-		last = 0.0
-		while last < len(seq):
-			out.append(seq[int(last):int(last + avg)])
-			last += avg
-		return out
+	for use if using >1 processor
+	'''
+	avg = len(seq) / float(procs)
+	out = []
+	last = 0.0
+	while last < len(seq):
+		out.append(seq[int(last):int(last + avg)])
+		last += avg
+	return out
 
 # ---------------------------------------------------
 # convert panels to data frame
